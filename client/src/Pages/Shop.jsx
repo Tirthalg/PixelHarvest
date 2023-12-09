@@ -4,17 +4,25 @@ import { Items } from '../Components/Items'
 import { Categories } from '../Components/ShopComp/Categories';
 import { About } from '../Components/ShopComp/About';
 import { Footer } from "../Components/Footer";
+import { useState, useEffect } from 'react';
 
 const Shop = ({categories}) => {
-    const n = ["1","2","3","4"];
-    const ms = ["1","2","3","4","5","6","7","8"];
-
+    const newitems_url = 'http://localhost:8080/get_items'
+    const [newit,setNew] = useState(["1","2","3","4"])
+    const fetchItems = async () => {
+        const newitems = await fetch(newitems_url);
+        const d = await newitems.json();
+        return setNew(d);
+    }
+    useEffect(() => {
+        fetchItems()
+    },[])
     return (
         <>
             <Hero />
             <div className='flex flex-wrap justify-around bg-gradient-to-b from-blue-100 to-slate-50 py-10'>
                 <p className='ml-10 my-5 text-3xl w-full logo'>New</p>
-                <Items items={n} />
+                <Items items={newit} />
             </div>
             <div className='flex flex-wrap justify-around bg-slate-50 pb-10 px-10'>
                 <p className='text-3xl w-full logo mb-5'>Categories</p>
@@ -32,10 +40,7 @@ const Shop = ({categories}) => {
                 </p>
                 <div className='w-96'></div>
             </div>
-            <div className='flex flex-wrap justify-around bg-gradient-to-b from-blue-100 to-slate-50 py-10' id='bestsellers'>
-                <p className='ml-10 my-5 text-3xl w-full logo'>Bestsellers</p>
-                <Items items={ms} />
-            </div>
+            
             <About />    
             <Footer/>
         </>

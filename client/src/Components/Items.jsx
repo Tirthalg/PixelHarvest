@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 function shoot() {
     
 }
-export const Items = ({items}) => {
+export const Items = ({ items }) => {
+    console.log(items)
     return (
         <>
             {items.map(item => (

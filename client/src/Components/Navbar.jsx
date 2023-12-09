@@ -1,7 +1,7 @@
 import logo from './Assets/logotb.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartShopping ,faCircleUser} from '@fortawesome/free-solid-svg-icons'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -9,8 +9,8 @@ import { auth, db, logout } from "../fb";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
 const Navbar = ({ categories }) => {
-    const [user, loading, error] = useAuthState(auth);
-    const [name, setName] = useState("");
+    const [user, loading,] = useAuthState(auth);
+    const [, setName] = useState("");
     const navigate = useNavigate();
     const fetchUserName = async () => {
         try {
