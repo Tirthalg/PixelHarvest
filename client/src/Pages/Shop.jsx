@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 const Shop = ({categories}) => {
     const newitems_url = 'http://localhost:8080/get_items'
-    const [newit,setNew] = useState(["1","2","3","4"])
+    const [newit,setNew] = useState([])
     const fetchItems = async () => {
         const newitems = await fetch(newitems_url);
         const d = await newitems.json();

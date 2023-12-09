@@ -23,7 +23,7 @@ app.post('/add_items',async(request,response )=> {
 })
 
 app.get('/get_items', async (request, response) => {
-    const items = await Items.find({})
+    const items = await Items.find({}).sort({timestamp:-1}).limit(8)
     try {
         response.send(items)
         console.log(items)
@@ -35,7 +35,14 @@ app.get('/get_items', async (request, response) => {
 })
 
 app.get('/get_category_items', async (req, res) => {
-    const items = await Items.find({ category: req.query.category })
+    console.log(req.query.category)
+    let items = []
+    if (req.query.category === 'All') {
+        items = await Items.find({})
+    }
+    else {
+        items = await Items.find({ category: req.query.category })
+    }
     try {
         res.send(items)
         console.log(items)
