@@ -20,6 +20,3 @@ db.once("open", function () {
 });
 app.use(Router);
 
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}/`);
-});
