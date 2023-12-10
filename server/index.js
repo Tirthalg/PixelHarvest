@@ -9,8 +9,7 @@ app.use(express.json())
 dotenv.config();
 
 const connectionString = process.env.DB_STRING
-const port = 3000
-const hostname = '0.0.0.0'
+const port = process.env.PORT || 5000
 
 mongoose.connect(connectionString, {
 })
