@@ -12,9 +12,11 @@ const ProductDetail = ({data}) => {
                     onClick={() => { document.getElementById("product_detail").style.display = 'none' }}>
                     <FontAwesomeIcon icon={faXmark} size='xl'/>
                 </button>
-                <div className='w-96 h-96 bg-slate-300 justify-center items-center flex flex-wrap'>
+                <div className='w-96 h-96 bg-slate-300 justify-center items-center flex flex-wrap snap-mandatory snap-y overflow-scroll'>
                     {data.image_links.map(item => (
-                        <img src={item} alt="Error loading" key={item}/>
+                        <div className='snap-center'>
+                            <img src={item} alt="Error loading" key={item}/>
+                        </div>
                     ))}
                 </div>
                 <div className='w-96 font-mono '>
@@ -22,7 +24,7 @@ const ProductDetail = ({data}) => {
                     <Link reloadDocument to={{pathname: "/category",search: "?c="+data.category}}>{data.category}</Link>
                     <p className='text-lg my-2'> Description</p>
                     <hr className='h-[1px] bg-slate-400'/>
-                    <p>{data.description}</p>
+                    <p className='p-5'>{data.description}</p>
                     <Link to={data.model_link}>
                         <div className='w-72 p-2 my-10 bg-white text-black rounded-lg text-center text-xl' >Download</div>
                     </Link>

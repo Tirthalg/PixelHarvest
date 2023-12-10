@@ -23,7 +23,7 @@ app.post('/add_items',async(request,response )=> {
 })
 
 app.get('/get_items', async (request, response) => {
-    const items = await Items.find({}).sort({timestamp:-1}).limit(8)
+    const items = await Items.find({}).sort({_id:-1}).limit(10)
     try {
         response.send(items)
         console.log(items)

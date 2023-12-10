@@ -7,7 +7,7 @@ import Navbar from './Components/Navbar';
 import { useEffect } from 'react';
 
 export default function App() {
-    const categories = ["All","Animals and Pets", "Architecture", "Art and Abstract", "Cars and Vehicles", "Characters and Creatures", "Cultural Heritage and History", "Electronics and Gadgets", "Fashion and Style", "Food and Drink", "Furniture and Home", "Music", "Nature and Plants", "News and Politics", "People", "Places and Travel", "Science and Technology", "Sports and Fitness", "Weapons and Military"];
+    const categories = ["All","Animals and Pets", "Architecture", "Art and Abstract", "Cars and Vehicles", "Characters and Creatures", "Electronics and Gadgets", "Fashion and Style", "Food and Drink", "Furniture and Home", "Music", "Nature and Plants", "Science and Technology", "Sports and Fitness", "Weapons and Military"];
     var path = useLocation().pathname
 
     const { pathname, hash, key } = useLocation();
