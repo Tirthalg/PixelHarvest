@@ -7,7 +7,7 @@ import ProductDetail from '../Components/ProductDetail';
 const ShopCategory = () => {
     let params = useSearchParams();
     const category = params[0].get('c');
-    const url = `http://localhost:8080/get_category_items?category=${category}`
+    const url = `https://pixelharvest.onrender.com/get_category_items?category=${category}`
     const [catItems, setItems] = useState([])
     const fetchItems = async () => {
         const items = await fetch(url)

@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import ProductDetail from '../Components/ProductDetail';
 
 const Shop = ({categories}) => {
-    const newitems_url = 'http://localhost:8080/get_items'
+    const newitems_url = 'https://pixelharvest.onrender.com/get_items'
     const [newit,setNew] = useState([])
     const fetchItems = async () => {
         const newitems = await fetch(newitems_url);
