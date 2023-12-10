@@ -42,7 +42,7 @@ const Navbar = ({ categories }) => {
                     <div className=" hidden absolute group-hover:block p-5 bg-gradient-to-t from-sky-200 to-slate-100 top-14 right-96 rounded-md z-30" >
                         <div className='grid grid-cols-2 gap-px z-20'>
                             {categories.map(category => (  
-                                <Link reloadDocument key={category}
+                                <Link reloadDocument
                                     to={{
                                         pathname: "/category",
                                         search: "?c="+category,
