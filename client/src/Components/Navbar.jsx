@@ -1,6 +1,6 @@
 import logo from './Assets/logotb.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCartShopping ,faCircleUser} from '@fortawesome/free-solid-svg-icons'
+import {faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -57,8 +57,8 @@ const Navbar = ({ categories }) => {
                         </div> 
                     </div>
                 </div>
-                <li className='transition duration-300 ease-in-out rounded-full p-2  hover:bg-sky-400'>
-                    <Link to='/cart'><FontAwesomeIcon icon={faCartShopping} size='lg'/></Link>
+                <li className='transition duration-300 ease-in-out rounded-full p-2  hover:bg-sky-400' title='Yet to be implemented'>
+                    <Link to='/'><FontAwesomeIcon icon={faCartShopping} size='lg'/></Link>
                 </li>
                 {
                     user === null && 
@@ -74,9 +74,7 @@ const Navbar = ({ categories }) => {
                 {
                     user !== null &&
                     <>
-                        <li className='transition duration-300 ease-in-out rounded-full p-2  hover:bg-sky-400 group'>
-                            <Link to='/profile'><FontAwesomeIcon icon={faCircleUser} size='xl' /></Link>
-                        </li>
+                        
                         <li className='justify-center'>
                             <button className='p-2 hover:bg-sky-400 rounded-lg' onClick={ logout}>
                                 Logout

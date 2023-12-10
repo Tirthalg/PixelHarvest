@@ -6,26 +6,28 @@ export const Footer = () => {
             <div className=' w-1/12'>
                 <ul>
                     <li className='text-sky-400 logo text-lg p-2'>Catalog</li>
-                    <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
-                        <Link to="/">New</Link>
-                    </li>
-                    <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
-                        <Link to="/">Categories</Link>
-                    </li>
-                    <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
-                        <Link to="/">Bestsellers</Link>
-                    </li>
+                    <Link to="/#new">
+                        <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
+                            New
+                        </li>
+                    </Link>
+                    <Link to="/#categories">
+                        <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
+                            Categories
+                        </li>
+                    </Link>
+                    
                 </ul>
             </div>
             <div className='w-1/12'>
                 <ul>
                     <li className='text-sky-400 logo text-lg p-2'>Information</li>
-                    <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
-                        <Link to="/About">About</Link>
-                    </li>
-                    <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
-                        <Link to="/Terms">Terms</Link>
-                    </li>
+                    <Link to="/About">
+                        <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
+                            About
+                        </li>
+                    </Link>
+                    
                 </ul>
             </div>
             <div className='w-3/12'>
@@ -33,12 +35,11 @@ export const Footer = () => {
                     <li className='text-sky-400 text-3xl p-2 logo'>
                         <Link to='/'>Pixel Harvest</Link>
                     </li>
-                    <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
-                        <Link to='javascript:void(0)'
-                            onClick={() => window.location = 'mailto:inertbutterfly@gmail.com'}>
+                    <Link onClick={(e) => { e.preventDefault(); window.location = 'mailto:inertbutterfly@gmail.com' }}>
+                        <li className='transition duration-200 ease-in-out rounded-md p-2 hover:bg-sky-400'>
                             Contact Me
-                        </Link>
-                    </li>
+                        </li>
+                    </Link>
                 </ul>
             </div>
         </div>
