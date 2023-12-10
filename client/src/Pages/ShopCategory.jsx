@@ -17,7 +17,7 @@ const ShopCategory = () => {
     }
     useEffect(() => {
         fetchItems()
-    },[])
+    },[category])
     const [product,setProduct] = useState({
         item_name: '',
         image_links: [''],
