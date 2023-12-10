@@ -9,7 +9,8 @@ app.use(express.json())
 dotenv.config();
 
 const connectionString = process.env.DB_STRING
-const port = process.env.PORT
+const port = 3000
+const hostname = '0.0.0.0'
 
 mongoose.connect(connectionString, {
 })
@@ -20,3 +21,6 @@ db.once("open", function () {
 });
 app.use(Router);
 
+app.listen(port,hostname ,() => {
+    console.log(`Server is running at http://${hostname}:${port}/`);
+});
